@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "970071369127",
+    "firebase_url": "https://footyhub-fyp.firebaseio.com",
+    "project_id": "footyhub-fyp",
+    "storage_bucket": "footyhub-fyp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970071369127:android:6ff0a403db0fa150",
+        "android_client_info": {
+          "package_name": "com.example.alirathore22.footyhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970071369127-dvjaoj6pr3lrau28mvuloqgc8qjh5ldb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkYdnk5rgOLA0N-8ienfeYtoCfTStZJZo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
