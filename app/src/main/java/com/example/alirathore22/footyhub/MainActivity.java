@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //this listener will execute this method on complete when the registration is complete
                 if (task.isSuccessful()){
                     //user successfully registered and logged in
-                    //we will start the profile activity here
+                    //we will start the teamAndLeague activity here
 
                     finish();
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    startActivity(new Intent(getApplicationContext(), teamAndLeagueSelection.class));
 
                     Toast.makeText(MainActivity.this, "Registered Successfully.", Toast.LENGTH_SHORT).show();
                    progressDialog.hide();
