@@ -35,6 +35,7 @@
             android:id="@+id/relLayoutMiddle"
             android:layout_below="@id/relLayoutTopBar"
             android:layout_above="@id/relLayoutBotBar">
+            <!-->need to change this to one of the tabs or into the drawer<-->
             <TextView
             android:id="@+id/viewEmail"
             android:layout_width="wrap_content"
@@ -83,7 +84,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="20"
-                            android:src="@drawable/ic_people_black_24dp" />
+                            android:src="@drawable/ic_home_black_24dp" />
 
                         <ImageButton
                             android:layout_width="0dp"
@@ -95,7 +96,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="20"
-                            android:src="@drawable/ic_home_black_24dp"
+                            android:src="@drawable/ic_people_black_24dp"
                             />
                         <ImageButton
                             android:layout_width="0dp"
