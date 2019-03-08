@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_arrow"
+        android:icon="@drawable/ic_arrow_back"
+        android:title="Back"
+        />
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"
+        />
+    <item
+        android:id="@+id/ic_livestream"
+        android:icon="@drawable/ic_livestream_video_black_24dp"
+        android:title="Streams"
+        />
+    <item
+        android:id="@+id/ic_tables"
+        android:icon="@drawable/ic_view_list_black_24dp"
+        android:title="Tables"
+        />
+    <item
+        android:id="@+id/ic_extras"
+        android:icon="@drawable/ic_flash_on_black_24dp"
+        android:title="Extras"
+        />
+
+
+
+
+</menu>

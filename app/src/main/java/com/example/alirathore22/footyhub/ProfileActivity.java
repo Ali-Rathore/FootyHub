@@ -1,6 +1,7 @@
 package com.example.alirathore22.footyhub;
 
 import android.content.Intent;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_file_download_black_24dp);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_file_upload_black_24dp);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_filter_frames_black_24dp);
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() == null){
