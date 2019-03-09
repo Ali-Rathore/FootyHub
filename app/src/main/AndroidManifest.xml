@@ -21,6 +21,10 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".teamAndLeagueSelection"></activity>
+        <activity android:name=".FixturesActivity"></activity>
+        <activity android:name=".LiveStreamActivity"></activity>
+        <activity android:name=".TablesActivity"></activity>
+        <activity android:name=".ExtraActivity"></activity>
     </application>
 
 </manifest>

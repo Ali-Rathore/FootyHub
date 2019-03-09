@@ -11,6 +11,7 @@ import java.lang.reflect.Field;
 //copied from stackoverflow
 
 public class BottomNavigationViewHelper {
+    //why isnt it working without suppressing?
     @SuppressLint("RestrictedApi")
     public static void disableShiftMode(BottomNavigationView view) {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
