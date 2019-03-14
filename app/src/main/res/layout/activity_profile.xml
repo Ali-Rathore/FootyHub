@@ -37,7 +37,12 @@
         <!-->android:layout_below="@id/relLayoutTopBar"<-->
 
         <!-->need to change this to one of the tabs or into the drawer<-->
-            <android.support.v4.widget.NestedScrollView
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBackground">
+                <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
@@ -67,6 +72,7 @@
                 </LinearLayout>
 
             </android.support.v4.widget.NestedScrollView>
+            </android.support.v4.widget.SwipeRefreshLayout>
 
 
         </RelativeLayout>

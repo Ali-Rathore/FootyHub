@@ -8,6 +8,7 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -36,13 +37,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
     public static final String API_KEY = "e0a61c52954d4b72b6f47a427ea29306";
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private List<Article> articles = new ArrayList<>();
     private Adapter adapter;
     private String TAG = MainActivity.class.getSimpleName();
+    private TextView topHeadline;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
 
     @Override
@@ -50,13 +53,18 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(this);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+
+        topHeadline = findViewById(R.id.topheadelines);
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(ProfileActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
-        LoadJson("");
 
+        onLoadingSwipeRefresh("");
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
@@ -93,9 +101,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void LoadJson(final String keyword){
+        swipeRefreshLayout.setRefreshing(true);
+
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
         String country = Utils.getCountry();
         String language = Utils.getLanguage();
+
 
         Call<News> call;
 
@@ -117,17 +128,21 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     adapter = new Adapter(articles, ProfileActivity.this);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
+                    topHeadline.setVisibility(View.VISIBLE);
+                    swipeRefreshLayout.setRefreshing(false);
+
                 } else {
+                    topHeadline.setVisibility(View.INVISIBLE);
+                    swipeRefreshLayout.setRefreshing(false);
                     Toast.makeText(ProfileActivity.this, "No Result!", Toast.LENGTH_SHORT).show();
                 }
-
             }
-
             @Override
             public void onFailure(Call<News> call, Throwable t) {
+                topHeadline.setVisibility(View.INVISIBLE);
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
-
     }
 
     @Override
@@ -144,13 +159,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if (query.length() > 2){
-                    LoadJson(query);
+                    onLoadingSwipeRefresh(query);
                 }
                 return false;
             }
             @Override
             public boolean onQueryTextChange(String newText) {
-                LoadJson(newText);
                 return false;
             }
         });
@@ -159,7 +173,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     @Override
-    public void onClick(View view) {
+    public void onRefresh() {LoadJson(""); }
+
+    private void onLoadingSwipeRefresh(final String keyword){
+
+        swipeRefreshLayout.post(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        LoadJson(keyword);
+                    }
+                }
+        );
 
     }
+
 }
