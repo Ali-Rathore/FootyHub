@@ -11,31 +11,32 @@
         android:layout_height="match_parent"
         android:id="@+id/relLayout">
         <!-->for the top part<-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/relLayoutTopBar"
-            android:layout_alignParentTop="true">
-            <android.support.design.widget.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#000">
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/white_grey_border_bottom">
-                </android.support.design.widget.TabLayout>
-            </android.support.design.widget.AppBarLayout>
-        </RelativeLayout>
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:id="@+id/relLayoutTopBar"-->
+            <!--android:layout_alignParentTop="true">-->
+            <!--<android.support.design.widget.AppBarLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="#000">-->
+                <!--<android.support.design.widget.TabLayout-->
+                    <!--android:id="@+id/tabs"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/white_grey_border_bottom">-->
+                <!--</android.support.design.widget.TabLayout>-->
+            <!--</android.support.design.widget.AppBarLayout>-->
+        <!--</RelativeLayout>-->
         <!-->for the middle part<-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/relLayoutMiddle"
-            android:layout_below="@id/relLayoutTopBar"
             android:layout_above="@id/relLayoutBotBar">
-            <!-->need to change this to one of the tabs or into the drawer<-->
+        <!-->android:layout_below="@id/relLayoutTopBar"<-->
+
+        <!-->need to change this to one of the tabs or into the drawer<-->
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
