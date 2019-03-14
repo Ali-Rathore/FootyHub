@@ -36,27 +36,8 @@
             android:layout_below="@id/relLayoutTopBar"
             android:layout_above="@id/relLayoutBotBar">
             <!-->need to change this to one of the tabs or into the drawer<-->
-            <TextView
-            android:id="@+id/viewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello"/>
-
-            <Button
-            android:layout_below="@id/viewEmail"
-            android:id="@+id/buttonLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Log Out"
-            android:textAllCaps="false"/>
-
-            <android.support.v4.view.ViewPager
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/container">
 
 
-            </android.support.v4.view.ViewPager>
         </RelativeLayout>
         <!-->for the bottom part<-->
         <RelativeLayout

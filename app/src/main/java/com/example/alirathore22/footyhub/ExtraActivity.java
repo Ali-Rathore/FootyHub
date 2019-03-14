@@ -8,9 +8,19 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class ExtraActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class ExtraActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private FirebaseAuth firebaseAuth;
+    private Button buttonLogout;
+    private TextView viewEmail;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,5 +62,35 @@ public class ExtraActivity extends AppCompatActivity {
                 return false;
             }
         });
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() == null){
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+
+        }
+
+        //setting user
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        buttonLogout = findViewById(R.id.buttonLogout);
+        viewEmail = findViewById(R.id.viewEmail);
+
+        buttonLogout.setOnClickListener(this);
+
+        //getting email for current user and setting in Text View.
+        viewEmail.setText("Select the option "+user.getEmail());
     }
+
+    @Override
+    public void onClick(View view) {
+        if(view == buttonLogout){
+            //logging out current user and starting the login Activity
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+    }
+
+
+
 }

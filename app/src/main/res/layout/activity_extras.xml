@@ -29,6 +29,19 @@
             android:id="@+id/relLayoutMiddle"
             android:layout_below="@id/relLayoutTopBar"
             android:layout_above="@id/relLayoutBotBar">
+            <TextView
+                android:id="@+id/viewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello"/>
+
+            <Button
+                android:layout_below="@id/viewEmail"
+                android:id="@+id/buttonLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textAllCaps="false"/>
 
             <TextView
                 android:id="@+id/activityTitle4"
