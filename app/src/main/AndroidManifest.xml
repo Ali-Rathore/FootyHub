@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,11 +23,11 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".teamAndLeagueSelection"></activity>
-        <activity android:name=".FixturesActivity"></activity>
-        <activity android:name=".LiveStreamActivity"></activity>
-        <activity android:name=".TablesActivity"></activity>
-        <activity android:name=".ExtraActivity"></activity>
+        <activity android:name=".teamAndLeagueSelection" />
+        <activity android:name=".FixturesActivity" />
+        <activity android:name=".LiveStreamActivity" />
+        <activity android:name=".TablesActivity" />
+        <activity android:name=".ExtraActivity" />
     </application>
 
 </manifest>
