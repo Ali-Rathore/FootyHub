@@ -15,6 +15,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +25,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -119,21 +121,15 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     public void LoadJson(final String keyword){
         errorLayout.setVisibility(View.GONE);
         swipeRefreshLayout.setRefreshing(true);
-
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
         String country = Utils.getCountry();
         String language = Utils.getLanguage();
-
-
         Call<News> call;
-
         if(keyword.length() > 0){
             call = apiInterface.getNewsSearch(keyword, language, "publishedAt", API_KEY);
         } else {
             call = apiInterface.getNews(country, API_KEY);
         }
-
-
         call.enqueue(new Callback<News>() {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
@@ -146,10 +142,8 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                     initListener();
-
                     topHeadline.setVisibility(View.VISIBLE);
                     swipeRefreshLayout.setRefreshing(false);
-
                 } else {
                     topHeadline.setVisibility(View.INVISIBLE);
                     swipeRefreshLayout.setRefreshing(false);
@@ -172,6 +166,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
                                     errorCode);
                 }
             }
+
             @Override
             public void onFailure(Call<News> call, Throwable t) {
                 topHeadline.setVisibility(View.INVISIBLE);
@@ -191,7 +186,6 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
             public void onItemClick(View view, int position) {
                 ImageView imageView = view.findViewById(R.id.img);
                 Intent intent = new Intent(ProfileActivity.this, NewsDetailActivity.class);
-
                 Article article = articles.get(position);
                 intent.putExtra("url", article.getUrl());
                 intent.putExtra("title", article.getTitle());
@@ -199,7 +193,6 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
                 intent.putExtra("date",  article.getPublishedAt());
                 intent.putExtra("source",  article.getSource().getName());
                 intent.putExtra("author",  article.getAuthor());
-
                 Pair<View, String> pair = Pair.create((View)imageView, ViewCompat.getTransitionName(imageView));
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
                         ProfileActivity.this,
@@ -222,7 +215,6 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         final SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         MenuItem searchMenuItem = menu.findItem(R.id.action_search);
-
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setQueryHint("Search Latest News...");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -246,7 +238,6 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     public void onRefresh() {LoadJson(""); }
 
     private void onLoadingSwipeRefresh(final String keyword){
-
         swipeRefreshLayout.post(
                 new Runnable() {
                     @Override
@@ -255,26 +246,40 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
                     }
                 }
         );
-
     }
 
     private void showErrorMessage(int imageView, String title, String message){
-
         if (errorLayout.getVisibility() == View.GONE) {
             errorLayout.setVisibility(View.VISIBLE);
         }
-
         errorImage.setImageResource(imageView);
         errorTitle.setText(title);
         errorMessage.setText(message);
-
         btnRetry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onLoadingSwipeRefresh("");
             }
         });
-
     }
+
+
+//    private void setSingleEvent(GridLayout mainGrid) {
+//        //LOOP CHILD ITEMS
+//        for(int i =0;i<mainGrid.getChildCount();i++)
+//        {
+//            CardView cardView = (CardView)mainGrid.getChildAt(i);
+//            final int FinalI=i;
+//            cardView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(ProfileActivity.this, "Clicked At Index"+FinalI, Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//        }
+//    }
+
+
+
 
 }
