@@ -59,11 +59,15 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     private TextView errorTitle, errorMessage;
     private Button btnRetry;
 
+    private String keyword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        keyword = "soccer football ronaldo";
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -76,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
 
-        onLoadingSwipeRefresh("Soccer");
+        onLoadingSwipeRefresh(keyword);
 
         errorLayout = findViewById(R.id.errorLayout);
         errorImage = findViewById(R.id.errorImage);
@@ -126,9 +130,9 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         String language = Utils.getLanguage();
         Call<News> call;
         if(keyword.length() > 0){
-            call = apiInterface.getNewsSearch(keyword, language, "publishedAt", API_KEY);
+            call = apiInterface.getNewsSearch(keyword, language, "relevancy", API_KEY);
         } else {
-            call = apiInterface.getNews(country, API_KEY);
+            call = apiInterface.getNews(keyword,"sports", country, API_KEY);
         }
         call.enqueue(new Callback<News>() {
             @Override
@@ -235,7 +239,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     }
 
     @Override
-    public void onRefresh() {LoadJson(""); }
+    public void onRefresh() {LoadJson(keyword); }
 
     private void onLoadingSwipeRefresh(final String keyword){
         swipeRefreshLayout.post(

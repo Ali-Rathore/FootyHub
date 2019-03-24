@@ -125,14 +125,13 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
         if (percentage == 1f && isHideToolbarView) {
             date_behavior.setVisibility(View.GONE);
             titleAppbar.setVisibility(View.VISIBLE);
-            isHideToolbarView = !isHideToolbarView;
+            isHideToolbarView =! isHideToolbarView;
 
         } else if (percentage < 1f && !isHideToolbarView) {
             date_behavior.setVisibility(View.VISIBLE);
             titleAppbar.setVisibility(View.GONE);
             isHideToolbarView = !isHideToolbarView;
         }
-
     }
 
 
@@ -156,7 +155,6 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
 
         else if (id == R.id.share){
             try{
-
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plan");
                 i.putExtra(Intent.EXTRA_SUBJECT, mSource);
@@ -167,7 +165,6 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
                 Toast.makeText(this, "Sorry, \nCannot be shared", Toast.LENGTH_SHORT).show();
             }
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
