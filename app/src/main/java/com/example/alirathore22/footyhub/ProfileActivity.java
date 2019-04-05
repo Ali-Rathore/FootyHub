@@ -59,7 +59,16 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     private TextView errorTitle, errorMessage;
     private Button btnRetry;
 
-    private String keyword;
+
+    /*
+    * HOW TO INTEGRATE FIREBASE IN THE CURRENT IMPLEMENTATION?
+    * The keywords for each user are to be fetched from firebase
+    * the club names are to be then arranged in a string separated by comma ','
+    * set the following variable "keyword" as the strings of club names separated by commas ','
+    * all should work perfectly now!!!
+    * Good LUCK
+    * */
+    private String keyword = "barcelona";
 
 
     @Override
@@ -67,7 +76,10 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        keyword = "soccer football ronaldo";
+
+//        if (getIntent() != null)
+//            keyword = "barcelona football" + getIntent().getStringExtra("keyword");
+//        keyword = "soccer football";
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -130,7 +142,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         String language = Utils.getLanguage();
         Call<News> call;
         if(keyword.length() > 0){
-            call = apiInterface.getNewsSearch(keyword, language, "relevancy", API_KEY);
+            call = apiInterface.getNewsSearch(keyword, language, "publishedAt", API_KEY);
         } else {
             call = apiInterface.getNews(keyword,"sports", country, API_KEY);
         }
@@ -238,15 +250,33 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         return true;
     }
 
+    public String[] splitKeywords(String keyword)
+    {
+        String [] keywords;
+
+        keywords = keyword.split(",");
+
+        return keywords;
+    }
+
+
+    public void loadJSONforKeywords()
+    {
+        for (String word:splitKeywords(keyword + " football club sports"))
+            LoadJson(word);
+    }
+
     @Override
-    public void onRefresh() {LoadJson(keyword); }
+    public void onRefresh() {
+        loadJSONforKeywords();
+    }
 
     private void onLoadingSwipeRefresh(final String keyword){
         swipeRefreshLayout.post(
                 new Runnable() {
                     @Override
                     public void run() {
-                        LoadJson(keyword);
+                        LoadJson(keyword + " football club");
                     }
                 }
         );
