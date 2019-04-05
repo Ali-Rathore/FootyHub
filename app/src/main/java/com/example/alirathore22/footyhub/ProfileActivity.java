@@ -237,7 +237,8 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if (query.length() > 2){
-                    onLoadingSwipeRefresh(query);
+//                    onLoadingSwipeRefresh(query);
+                    LoadJson(query + " football club");
                 }
                 return false;
             }
@@ -276,7 +277,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
                 new Runnable() {
                     @Override
                     public void run() {
-                        LoadJson(keyword + " football club");
+                        loadJSONforKeywords();
                     }
                 }
         );
@@ -292,7 +293,8 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         btnRetry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onLoadingSwipeRefresh("");
+//                onLoadingSwipeRefresh("");
+                loadJSONforKeywords();
             }
         });
     }
