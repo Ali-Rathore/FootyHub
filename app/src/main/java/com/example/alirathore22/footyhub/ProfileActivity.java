@@ -9,6 +9,9 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.util.Pair;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
@@ -71,6 +74,10 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     private String keyword = "barcelona";
 
 
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+    private FragmentTransaction ft = fragmentManager.beginTransaction();
+    private Fragment frag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +113,11 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
+        set_botton_navigation_listener(bottomNavigationView);
+    }
+
+    public void set_botton_navigation_listener(BottomNavigationView bottomNavigationView)
+    {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -113,20 +125,34 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
                     case R.id.ic_home:
                         break;
                     case R.id.ic_fixtures:
-                        Intent intent = new Intent(ProfileActivity.this, FixturesActivity.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(ProfileActivity.this, FixturesActivity.class);
+//                        startActivity(intent);
+                        frag = new FixturesActivity();
+                        ft.replace(R.id.mainLayout, frag);
+//                        ft.addToBackStack(stack);
+                        ft.commit();
                         break;
                     case R.id.ic_livestream:
-                        Intent intent1 = new Intent(ProfileActivity.this, LiveStreamActivity.class);
-                        startActivity(intent1);
+//                        Intent intent1 = new Intent(ProfileActivity.this, LiveStreamActivity.class);
+//                        startActivity(intent1);
+                        frag = new LiveStreamActivity();
+                        ft.replace(R.id.mainLayout, frag);
+//                        ft.addToBackStack(stack);
+                        ft.commit();
                         break;
                     case R.id.ic_tables:
-                        Intent intent2 = new Intent(ProfileActivity.this, TablesActivity.class);
-                        startActivity(intent2);
+//                        Intent intent2 = new Intent(ProfileActivity.this, TablesActivity.class);
+//                        startActivity(intent2);
+                        frag = new TablesActivity();
+                        ft.replace(R.id.mainLayout, frag);
+//                        ft.addToBackStack(stack);
+                        ft.commit();
                         break;
                     case R.id.ic_extras:
-                        Intent intent3 = new Intent(ProfileActivity.this, ExtraActivity.class);
-                        startActivity(intent3);
+                        frag = new ExtraActivity();
+                        ft.replace(R.id.mainLayout, frag);
+//                        ft.addToBackStack(stack);
+                        ft.commit();
                         break;
                 }
                 return false;
