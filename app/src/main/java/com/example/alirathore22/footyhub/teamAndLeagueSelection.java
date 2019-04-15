@@ -18,11 +18,19 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
     Button logOut;
     Button done;
     GridLayout mainGrid;
+    CardView cardView_1;
+    String keyword = " ";
+    Intent profileActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_and_league_selection);
+
+        cardView_1 = findViewById(R.id.barcelona_card);
+        cardView_1.setOnClickListener(this);
+
+        profileActivity = new Intent(this, ProfileActivity.class);
 
         mainGrid=(GridLayout)findViewById(R.id.mainGrid);
         SetToggleEvent(mainGrid);
@@ -72,7 +80,12 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
         }
         if(v == done){
             finish();
-            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+            profileActivity.putExtra("keyword", keyword);
+            startActivity(profileActivity);
+        }
+        if (v.getId() == R.id.barcelona_card)
+        {
+            keyword += "barcelona ";
         }
 
     }
