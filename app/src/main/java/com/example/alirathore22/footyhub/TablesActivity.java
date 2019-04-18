@@ -53,8 +53,8 @@ public class TablesActivity extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_tables, container, false);
 
-        TextView title = (TextView) view.findViewById(R.id.activityTitle3);
-        title.setText("This is the Tables Activity");
+        //TextView title = (TextView) view.findViewById(R.id.activityTitle3);
+        //title.setText("This is the Tables Activity");
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
