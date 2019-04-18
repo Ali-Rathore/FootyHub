@@ -7,16 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.alirathore22.footyhub.models.Table;
+
 import java.util.List;
 
 public class LeagueTableAdapter extends RecyclerView.Adapter<LeagueTableAdapter.MyViewHolder> {
 
-    //List<Table> table;
+    List<Table> table;
 
-//    LeagueTableAdapter(List<Table> items){
-//        this.Table = items;
-//    }
-//
+    LeagueTableAdapter(List<Table> items){
+        this.table = items;
+    }
+
 
     @NonNull
     @Override
@@ -29,12 +31,20 @@ public class LeagueTableAdapter extends RecyclerView.Adapter<LeagueTableAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        holder.team_name.setText(table.get(position).getName());
+        holder.matches_played.setText(table.get(position).getPlayed().toString());
+        holder.goals_for.setText(table.get(position).getGoalsfor().toString());
+        holder.goal_difference.setText(table.get(position).getGoalsdifference().toString());
+        holder.goals_against.setText(table.get(position).getGoalsagainst().toString());
+        holder.wins.setText(table.get(position).getWin().toString());
+        holder.draws.setText(table.get(position).getDraw().toString());
+        holder.loss.setText(table.get(position).getLoss().toString());
+        holder.total_points.setText(table.get(position).getTotal().toString());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return this.table.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
