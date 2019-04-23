@@ -11,37 +11,111 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relLayout">
-        <!-->for the top part<-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/relLayoutTopBar"
-            android:layout_alignParentTop="true">
-            <android.support.design.widget.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#000">
-            </android.support.design.widget.AppBarLayout>
-        </RelativeLayout>
+        <!--&lt;!&ndash;>for the top part<&ndash;&gt;-->
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:id="@+id/relLayoutTopBar"-->
+            <!--android:layout_alignParentTop="true">-->
+            <!--<android.support.design.widget.AppBarLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="#000">-->
+            <!--</android.support.design.widget.AppBarLayout>-->
+        <!--</RelativeLayout>-->
         <!-->for the middle part<-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/relLayoutMiddle"
-            android:layout_below="@id/relLayoutTopBar"
-            android:layout_above="@id/relLayoutBotBar">
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
+            android:layout_above="@id/relLayoutBotBar"
+            android:padding="10dp">
+            <!--android:layout_below="@id/relLayoutTopBar"-->
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:layout_alignParentTop="true"/>
+                android:orientation="horizontal"
+                android:weightSum="11">
 
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:layout_weight="3"
+                    />
+
+                <TextView
+                    android:id="@+id/matchesPlayed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MP"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/goalsFor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GF"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/goalsAgainst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GA"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/goalDifference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GD"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/won"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="W"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/draw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="D"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/lost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pts"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
            <android.support.v7.widget.RecyclerView
                android:id="@+id/table_view"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:layout_below="@+id/name"/>
+               android:layout_below="@+id/linearLayout"/>
 
 
         </RelativeLayout>

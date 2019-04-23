@@ -73,12 +73,12 @@ public class ExtraActivity extends Fragment implements View.OnClickListener {
         set_botton_navigation_listener(bottomNavigationView);
 
         firebaseAuth = FirebaseAuth.getInstance();
-//        if(firebaseAuth.getCurrentUser() == null){
-//
-////            finish();
-////            startActivity(new Intent(this, LoginActivity.class));
-//
-//        }
+        if(firebaseAuth.getCurrentUser() == null){
+
+//            finish();
+//            startActivity(new Intent(this, LoginActivity.class));
+
+        }
 
         //setting user
         FirebaseUser user = firebaseAuth.getCurrentUser();

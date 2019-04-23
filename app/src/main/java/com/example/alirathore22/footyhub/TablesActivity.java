@@ -84,8 +84,6 @@ public class TablesActivity extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_tables, container, false);
 
-        //TextView title = (TextView) view.findViewById(R.id.activityTitle3);
-        //title.setText("This is the Tables Activity");
 
         myView = view.findViewById(R.id.table_view);
         get_league_table();

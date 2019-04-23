@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +24,10 @@ public class FixturesActivity extends Fragment {
 
     private FragmentTransaction ft;
     private Fragment frag;
+
+    RecyclerView myView;
+    MatchFixtureAdapter adapter;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,8 +57,10 @@ public class FixturesActivity extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_fixtures, container, false);
 
-        TextView title = (TextView) view.findViewById(R.id.activityTitle1);
-        title.setText("This is the Fixtures Activity");
+        myView = view.findViewById(R.id.fixtures_view);
+
+        //TextView title = (TextView) view.findViewById(R.id.activityTitle1);
+        //title.setText("This is the Fixtures Activity");
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
