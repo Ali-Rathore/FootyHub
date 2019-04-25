@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void registerUser(){
         final String email = editTextEmail.getText().toString().trim();
+        Log.d("email",email);
         String password = editTextPassword.getText().toString().trim();
 
         //to check if strings we are getting are empty or not:
@@ -96,7 +98,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //we will start the teamAndLeague activity here
 
                     finish();
-                    startActivity(new Intent(getApplicationContext(), teamAndLeagueSelection.class));
+
+                    Intent intent = new Intent(getApplicationContext(), teamAndLeagueSelection.class);
+                    intent.putExtra("email", email.split("@")[0]);
+                    startActivity(intent);
 
                     Toast.makeText(MainActivity.this, "Registered Successfully.", Toast.LENGTH_SHORT).show();
                    progressDialog.hide();

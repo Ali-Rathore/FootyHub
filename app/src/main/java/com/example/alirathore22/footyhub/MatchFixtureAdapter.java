@@ -34,10 +34,9 @@ public class MatchFixtureAdapter extends RecyclerView.Adapter<MatchFixtureAdapte
         //don't know what to do here
         holder.date_match.setText(data.get(position).getStrDate());
         holder.home_team.setText(data.get(position).getStrHomeTeam());
-        holder.home_score.setText(data.get(position).getIntHomeScore().toString());
-        holder.away_score.setText(data.get(position).getIntAwayScore().toString());
-        holder.away_team.setText(data.get(position).getStrAwayTeam());
-
+        holder.home_score.setText(data.get(position).getStrAwayTeam());
+//        holder.away_score.setText(data.get(position).getIntAwayScore().toString());
+  //      holder.away_team.setText(data.get(position).getIntHomeScore().toString());
     }
 
     @Override

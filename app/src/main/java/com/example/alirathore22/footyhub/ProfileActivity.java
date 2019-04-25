@@ -62,6 +62,10 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     private TextView errorTitle, errorMessage;
     private Button btnRetry;
 
+    private String email;
+    private FirebaseAuth firebaseAuth;
+
+
 
     /*
     * HOW TO INTEGRATE FIREBASE IN THE CURRENT IMPLEMENTATION?
@@ -70,6 +74,58 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     * set the following variable "keyword" as the strings of club names separated by commas ','
     * all should work perfectly now!!!
     * Good LUCK
+    *
+    *
+    * hasan ka code as follows
+    *
+    * TextView textView;
+    private ListView listView;
+    private LinearLayout myLinearLayout;
+    List<String> list_firebase = new ArrayList<String>();
+    private FirebaseDatabase database;
+    private DatabaseReference myref;
+    private String email;
+    private String name;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_extras);
+        email = getIntent().getStringExtra("email");
+        Log.d("SHIT",email);
+        myref = FirebaseDatabase.getInstance().getReference().child("users").child(email);
+        myLinearLayout = findViewById(R.id.activity_extras);
+        myref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //String zeroth_team=dataSnapshot.child("0").getValue().toString();
+                long count = dataSnapshot.getChildrenCount();
+                show_vals(dataSnapshot,count);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+    }
+    private void show_vals(DataSnapshot dataSnapshot, long count) {
+        //final int N = 10; // total number of textviews to add
+        int N = (int) count;
+        final TextView[] myTextViews = new TextView[N]; // create an empty array;
+
+        for (int i = 0; i < N; i++) {
+            final TextView rowTextView = new TextView(ExtraActivity.this);
+
+            String team = dataSnapshot.child(String.valueOf(i)).getValue().toString();
+
+            rowTextView.setText(team);
+
+            myLinearLayout.addView(rowTextView);
+
+            // save a reference to the textview for later
+            myTextViews[i] = rowTextView;
+        }
+    }
+}
+    *
     * */
     private String keyword = "barcelona";
 
@@ -252,6 +308,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        firebaseAuth = FirebaseAuth.getInstance();
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
@@ -275,6 +332,18 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         });
         searchMenuItem.getIcon().setVisible(false, false);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_logout:
+                firebaseAuth.signOut();
+                startActivity(new Intent(this, LoginActivity.class));
+
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public String[] splitKeywords(String keyword)
@@ -324,24 +393,5 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
             }
         });
     }
-
-
-//    private void setSingleEvent(GridLayout mainGrid) {
-//        //LOOP CHILD ITEMS
-//        for(int i =0;i<mainGrid.getChildCount();i++)
-//        {
-//            CardView cardView = (CardView)mainGrid.getChildAt(i);
-//            final int FinalI=i;
-//            cardView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Toast.makeText(ProfileActivity.this, "Clicked At Index"+FinalI, Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//        }
-//    }
-
-
-
 
 }

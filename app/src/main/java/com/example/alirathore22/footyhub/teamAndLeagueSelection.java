@@ -31,10 +31,8 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
     Intent profileActivity;
 
     private DatabaseReference mDatabase;
-
     List<Integer> selected = new ArrayList<Integer>();
     List<String> selected_val = new ArrayList<String>();
-
     String email;
 
 
@@ -43,8 +41,6 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_and_league_selection);
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
-        profileActivity = new Intent(this, ProfileActivity.class);
 
         mainGrid=(GridLayout)findViewById(R.id.mainGrid);
         SetToggleEvent(mainGrid);
