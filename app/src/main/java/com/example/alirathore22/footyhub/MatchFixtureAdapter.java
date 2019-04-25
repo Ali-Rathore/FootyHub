@@ -7,8 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.alirathore22.footyhub.models.Event;
+
+import java.util.List;
+
 public class MatchFixtureAdapter extends RecyclerView.Adapter<MatchFixtureAdapter.MyViewHolder> {
 
+    List<Event> data;
+
+    public MatchFixtureAdapter(List<Event> dat)
+    {
+        this.data = dat;
+    }
 
     @NonNull
     @Override
@@ -22,19 +32,17 @@ public class MatchFixtureAdapter extends RecyclerView.Adapter<MatchFixtureAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //don't know what to do here
-       // holder.date_match.setText();
-       // holder.home_team.setText();
-       // holder.home_score.setText();
-       // holder.away_score.setText();
-       // holder.away_team.setText();
-
-
+        holder.date_match.setText(data.get(position).getStrDate());
+        holder.home_team.setText(data.get(position).getStrHomeTeam());
+        holder.home_score.setText(data.get(position).getStrAwayTeam());
+        holder.away_score.setText(data.get(position).getIntAwayScore().toString());
+        holder.away_team.setText(data.get(position).getIntHomeScore().toString());
     }
 
     @Override
     public int getItemCount() {
         //don't know what to do here
-        return 0;
+        return data.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -47,7 +55,6 @@ public class MatchFixtureAdapter extends RecyclerView.Adapter<MatchFixtureAdapte
             home_team = itemView.findViewById(R.id.home_team);
             away_score = itemView.findViewById(R.id.away_score);
             away_team = itemView.findViewById(R.id.away_team);
-
         }
     }
 }
