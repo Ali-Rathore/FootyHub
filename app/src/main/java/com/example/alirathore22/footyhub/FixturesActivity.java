@@ -84,6 +84,7 @@ public class FixturesActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_fixtures, container, false);
 
         myView = view.findViewById(R.id.fixtures_view);
+        get_fixtures();
 
         //TextView title = (TextView) view.findViewById(R.id.activityTitle1);
         //title.setText("This is the Fixtures Activity");
@@ -145,7 +146,7 @@ public class FixturesActivity extends Fragment {
         });
     }
 
-    public void get_league_table()
+    public void get_fixtures()
     {
         String tag_json_arry = "json_array_req";
 
