@@ -98,10 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //we will start the teamAndLeague activity here
 
                     finish();
-
-                    Intent intent = new Intent(getApplicationContext(), teamAndLeagueSelection.class);
-                    intent.putExtra("email", email.split("@")[0]);
-                    startActivity(intent);
+                    startActivity(new Intent(getApplicationContext(), teamAndLeagueSelection.class));
 
                     Toast.makeText(MainActivity.this, "Registered Successfully.", Toast.LENGTH_SHORT).show();
                    progressDialog.hide();

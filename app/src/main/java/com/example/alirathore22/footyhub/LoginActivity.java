@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
 
-    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +70,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        //If Validations are okay, we show a progressdialog
+        //If Validations are okay, we show a progress dialog
 
-        progressDialog.setMessage("Access Granted...");
+        progressDialog.setMessage("Logging in...");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -84,9 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if(task.isSuccessful()){
                     //start profile activity
                     finish();
-                    Intent intent1 = new Intent(getApplicationContext(), ProfileActivity.class);
-                    intent1.putExtra("email",email);
-                    startActivity(intent1);
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                 }
 
             }

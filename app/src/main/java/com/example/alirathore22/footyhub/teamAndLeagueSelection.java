@@ -94,6 +94,8 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
         }
         if(v == done){
             get_vals();
+            finish();
+            startActivity(new Intent(this, ProfileActivity.class));
         }
     }
 
@@ -105,7 +107,6 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
             selected_val.add(getName);
         }
 
-        mDatabase.child("users").child(email).setValue(selected_val);
         Toast.makeText(teamAndLeagueSelection.this, selected_val.toString(), Toast.LENGTH_LONG).show();
 
     }
