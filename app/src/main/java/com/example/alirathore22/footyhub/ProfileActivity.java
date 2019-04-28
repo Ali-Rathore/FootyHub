@@ -1,5 +1,6 @@
 package com.example.alirathore22.footyhub;
 
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -40,6 +42,11 @@ import com.example.alirathore22.footyhub.models.Article;
 import com.example.alirathore22.footyhub.models.News;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +55,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener, ValueEventListener {
     public static final String API_KEY = "e0a61c52954d4b72b6f47a427ea29306";
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -62,87 +69,35 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     private TextView errorTitle, errorMessage;
     private Button btnRetry;
 
-    private String email;
     private FirebaseAuth firebaseAuth;
-
-
-
-    /*
-    * HOW TO INTEGRATE FIREBASE IN THE CURRENT IMPLEMENTATION?
-    * The keywords for each user are to be fetched from firebase
-    * the club names are to be then arranged in a string separated by comma ','
-    * set the following variable "keyword" as the strings of club names separated by commas ','
-    * all should work perfectly now!!!
-    * Good LUCK
-    *
-    *
-    * hasan ka code as follows
-    *
-    * TextView textView;
-    private ListView listView;
-    private LinearLayout myLinearLayout;
-    List<String> list_firebase = new ArrayList<String>();
     private FirebaseDatabase database;
     private DatabaseReference myref;
-    private String email;
-    private String name;
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_extras);
-        email = getIntent().getStringExtra("email");
-        Log.d("SHIT",email);
-        myref = FirebaseDatabase.getInstance().getReference().child("users").child(email);
-        myLinearLayout = findViewById(R.id.activity_extras);
-        myref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //String zeroth_team=dataSnapshot.child("0").getValue().toString();
-                long count = dataSnapshot.getChildrenCount();
-                show_vals(dataSnapshot,count);
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-    }
-    private void show_vals(DataSnapshot dataSnapshot, long count) {
-        //final int N = 10; // total number of textviews to add
-        int N = (int) count;
-        final TextView[] myTextViews = new TextView[N]; // create an empty array;
 
-        for (int i = 0; i < N; i++) {
-            final TextView rowTextView = new TextView(ExtraActivity.this);
+    private String user_email;
 
-            String team = dataSnapshot.child(String.valueOf(i)).getValue().toString();
-
-            rowTextView.setText(team);
-
-            myLinearLayout.addView(rowTextView);
-
-            // save a reference to the textview for later
-            myTextViews[i] = rowTextView;
-        }
-    }
-}
-    *
-    * */
-    private String keyword = "barcelona";
+    private String keyword = "";
 
 
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private FragmentTransaction ft = fragmentManager.beginTransaction();
     private Fragment frag;
 
+    ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        progressDialog = new ProgressDialog(this);
 
-//        if (getIntent() != null)
-//            keyword = "barcelona football" + getIntent().getStringExtra("keyword");
-//        keyword = "soccer football";
+        firebaseAuth = FirebaseAuth.getInstance();
+        user_email = firebaseAuth.getCurrentUser().getEmail().split("@")[0];
+
+        myref = FirebaseDatabase.getInstance().getReference().child("users").child(user_email);
+
+        myref.addValueEventListener(this);
+
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -155,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
 
-        onLoadingSwipeRefresh(keyword);
+//        onLoadingSwipeRefresh(keyword);
 
         errorLayout = findViewById(R.id.errorLayout);
         errorImage = findViewById(R.id.errorImage);
@@ -321,7 +276,7 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
             public boolean onQueryTextSubmit(String query) {
                 if (query.length() > 2){
 //                    onLoadingSwipeRefresh(query);
-                    LoadJson(query + " football club");
+                    LoadJson(query + " football");
                 }
                 return false;
             }
@@ -358,8 +313,14 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
 
     public void loadJSONforKeywords()
     {
-        for (String word:splitKeywords(keyword + " football club sports"))
-            LoadJson(word);
+//        Log.d(TAG, "loadJSONforKeywords: " + keyword);
+
+        for (String word:splitKeywords(keyword))
+        {
+            LoadJson(word + " football club");
+            Log.d(TAG, "loadJSONforKeywords: " + word);
+        }
+
     }
 
     @Override
@@ -394,4 +355,25 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         });
     }
 
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+        long count = dataSnapshot.getChildrenCount();
+
+        for (int i = 0; i < count; i++)
+        {
+            keyword += dataSnapshot.child(String.valueOf(i)).getValue().toString() + ",";
+        }
+
+        Toast.makeText(this, keyword, Toast.LENGTH_LONG).show();
+        onLoadingSwipeRefresh(keyword);
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+        Toast.makeText(this, "Connectivity Problem", Toast.LENGTH_SHORT).show();
+
+    }
 }

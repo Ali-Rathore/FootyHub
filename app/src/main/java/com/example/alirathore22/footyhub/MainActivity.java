@@ -112,7 +112,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
                 private void AddUser() {
-                    mDatabase.child("users").child(email.split("@")[0]).setValue("Barca");
+//                    mDatabase.child("users").child(email.split("@")[0]).setValue("Barca");
+                    mDatabase.child("users").child(email.split("@")[0]).setValue("test");
                 }
         });
 

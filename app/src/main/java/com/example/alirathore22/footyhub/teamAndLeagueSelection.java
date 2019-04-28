@@ -95,7 +95,9 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
         if(v == done){
             get_vals();
             finish();
-            startActivity(new Intent(this, ProfileActivity.class));
+            Intent intent = new Intent(this, ProfileActivity.class);
+//            intent.putExtra("teams", selected_val.toString().substring(1,selected_val.size()-2));
+            startActivity(intent);
         }
     }
 
@@ -107,8 +109,11 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
             selected_val.add(getName);
         }
 
-        Toast.makeText(teamAndLeagueSelection.this, selected_val.toString(), Toast.LENGTH_LONG).show();
-
+//        Toast.makeText(teamAndLeagueSelection.this, selected_val.toString(), Toast.LENGTH_LONG).show();
+        String user = firebaseAuth.getCurrentUser().getEmail().split("@")[0];
+        Log.d("FBUSER", user);
+//            mDatabase.child("users").child(user).setValue(getName);
+        mDatabase.child("users").child(user).setValue(selected_val);
     }
 
 }
