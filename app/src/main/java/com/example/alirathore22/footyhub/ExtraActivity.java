@@ -83,25 +83,12 @@ public class ExtraActivity extends Fragment implements View.OnClickListener {
         //setting user
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        buttonLogout = view.findViewById(R.id.buttonLogout);
-        viewEmail = view.findViewById(R.id.viewEmail);
-
-        buttonLogout.setOnClickListener(this);
-
-        //getting email for current user and setting in Text View.
-        viewEmail.setText("Select the option "+user.getEmail());
-
         return view;
     }
 
     @Override
     public void onClick(View view) {
-        if(view == buttonLogout){
-            //logging out current user and starting the login Activity
-//            firebaseAuth.signOut();
-//            finish();
-//            startActivity(new Intent(this, LoginActivity.class));
-        }
+
     }
 
     public void set_botton_navigation_listener(BottomNavigationView bottomNavigationView)

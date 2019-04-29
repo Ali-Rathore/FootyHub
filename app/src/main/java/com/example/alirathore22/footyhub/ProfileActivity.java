@@ -124,7 +124,15 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
+
         set_botton_navigation_listener(bottomNavigationView);
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() == null){
+              finish();
+              startActivity(new Intent(this, LoginActivity.class));
+
+        }
+        FirebaseUser user = firebaseAuth.getCurrentUser();
     }
 
     public void set_botton_navigation_listener(BottomNavigationView bottomNavigationView)
