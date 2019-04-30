@@ -58,7 +58,8 @@ public class LiveStreamActivity extends Fragment {
     ProgressDialog pDialog;
     List<StreamingLink> link;
 
-    String local_host_link = "http://172.30.65.247/Footyhub_webpanel/getteamlinks.php";
+//    String local_host_link = "http://172.30.65.247/Footyhub_webpanel/getteamlinks.php";
+    String local_host_link = "http://webpanelfootyhub.000webhostapp.com/Footyhub_webpanel/getteamlinks.php";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,11 +1,14 @@
 package com.example.alirathore22.footyhub;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.alirathore22.footyhub.models.Event;
 import com.example.alirathore22.footyhub.models.StreamingLink;
@@ -44,13 +47,21 @@ public class LiveStreamAdapter extends RecyclerView.Adapter<LiveStreamAdapter.My
         return data.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView  home_team,  away_team, stream_link;
         public MyViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             home_team = itemView.findViewById(R.id.home_team);
             away_team = itemView.findViewById(R.id.away_team);
             stream_link = itemView.findViewById(R.id.streaming_link);
+        }
+
+        @Override
+        public void onClick(View v) {
+//            Toast.makeText(v.getContext(), "Clicked!", Toast.LENGTH_LONG).show();
+            Intent browsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(stream_link.getText().toString()));
+            v.getContext().startActivity(browsIntent);
         }
     }
 }
