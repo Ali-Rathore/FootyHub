@@ -31,6 +31,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.alirathore22.footyhub.models.Event;
+import com.example.alirathore22.footyhub.models.StreamingLink;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -55,7 +56,9 @@ public class LiveStreamActivity extends Fragment {
     GsonBuilder gsonBuilder;
     Gson gson;
     ProgressDialog pDialog;
-    List<Event> link;
+    List<StreamingLink> link;
+
+    String local_host_link = "http://172.30.65.247/Footyhub_webpanel/getteamlinks.php";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -86,7 +89,8 @@ public class LiveStreamActivity extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_livestream, container, false);
 
-
+        myView = view.findViewById(R.id.livestream_view);
+        get_links();
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
@@ -148,7 +152,7 @@ public class LiveStreamActivity extends Fragment {
     public void get_links(){
 
         String tag_json_arry = "json_array_req";
-        String url = "https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4328";
+        String url = local_host_link;
 
         mRequestQueue = Volley.newRequestQueue(getContext());
 
@@ -166,13 +170,13 @@ public class LiveStreamActivity extends Fragment {
                 JSONObject jsonObject = null;
                 try {
                     jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("events");
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
 
-                    link = Arrays.asList(gson.fromJson(jsonArray.toString(), Event[].class));
+                    link = Arrays.asList(gson.fromJson(jsonArray.toString(), StreamingLink[].class));
                     Log.d("Response:",  link.toString());
 
                     for (int i = 0; i < link.size(); i++)
-                        Log.d("Data: ", link.get(i).getStrEvent());
+                        Log.d("Data: ", link.get(i).getTeam_a());
 
 //                    layoutManager = new LinearLayoutManager(getContext());
 //                    myView.setLayoutManager(layoutManager);

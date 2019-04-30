@@ -8,15 +8,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.alirathore22.footyhub.models.Event;
+import com.example.alirathore22.footyhub.models.StreamingLink;
 
 import java.util.List;
 
 public class LiveStreamAdapter extends RecyclerView.Adapter<LiveStreamAdapter.MyViewHolder> {
 
 
-    private final List<Event> data;
+    private final List<StreamingLink> data;
 
-    public LiveStreamAdapter(List<Event> dat)
+    public LiveStreamAdapter(List<StreamingLink> dat)
     {
         this.data = dat;
     }
@@ -31,9 +32,9 @@ public class LiveStreamAdapter extends RecyclerView.Adapter<LiveStreamAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.home_team.setText(data.get(position).getStrHomeTeam());
-        holder.away_team.setText(data.get(position).getStrAwayTeam());
-        holder.stream_link.setText(data.get(position).getStrAwayTeam());
+        holder.home_team.setText(data.get(position).getTeam_a());
+        holder.away_team.setText(data.get(position).getTeam_b());
+        holder.stream_link.setText(data.get(position).getLink());
 
     }
 
