@@ -127,12 +127,11 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
 
         set_botton_navigation_listener(bottomNavigationView);
         firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
         if(firebaseAuth.getCurrentUser() == null){
               finish();
               startActivity(new Intent(this, LoginActivity.class));
-
         }
-        FirebaseUser user = firebaseAuth.getCurrentUser();
     }
 
     public void set_botton_navigation_listener(BottomNavigationView bottomNavigationView)
@@ -303,8 +302,6 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
             case R.id.action_logout:
                 firebaseAuth.signOut();
                 startActivity(new Intent(this, LoginActivity.class));
-
-
         }
         return super.onOptionsItemSelected(item);
     }

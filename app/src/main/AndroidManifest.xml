@@ -28,6 +28,10 @@
         <activity android:name=".LiveStreamActivity" />
         <activity android:name=".TablesActivity" />
         <activity android:name=".ExtraActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

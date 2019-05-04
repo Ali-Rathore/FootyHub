@@ -12,34 +12,33 @@
         android:layout_height="match_parent"
         android:id="@+id/relLayout">
         <!-->for the top part<-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/relLayoutTopBar"
-            android:layout_alignParentTop="true">
-            <android.support.design.widget.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#000">
-            </android.support.design.widget.AppBarLayout>
-        </RelativeLayout>
-        <!-->for the middle part<-->
+        <!-->  <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:id="@+id/relLayoutTopBar"
+             android:layout_alignParentTop="true">
+             <android.support.design.widget.AppBarLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="#000">
+             </android.support.design.widget.AppBarLayout>
+         </RelativeLayout> <-->
+         <!-->for the middle part<-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/relLayoutMiddle"
-            android:layout_below="@id/relLayoutTopBar"
             android:layout_above="@id/relLayoutBotBar">
 
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/fixtures_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+         <android.support.v7.widget.RecyclerView
+             android:id="@+id/fixtures_view"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
 
 
-        </RelativeLayout>
-        <!-->for the bottom part<-->
+     </RelativeLayout>
+     <!-->for the bottom part<-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
