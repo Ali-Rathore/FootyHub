@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity"
-    android:id="@+id/mainLayout">
+    android:id="@+id/mainLayout"
+    android:background="@drawable/gradient">
 
 
     <RelativeLayout
@@ -44,7 +45,7 @@
                 android:id="@+id/swipe_refresh_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorBackground">
+                android:background="#001c52">
                 <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -54,13 +55,13 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:id="@+id/topheadelines"
-                        android:textColor="@color/colorTextTitle"
+                        android:textColor="@color/colorTextGold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Top Headlines"
-                        android:fontFamily="sans-serif-light"
-                        android:textSize="17sp"
+                        android:fontFamily="@font/roboto_slab_thin"
+                        android:textSize="18sp"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginTop="10dp"
@@ -88,13 +89,16 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/relLayoutBotBar"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:background="#001c52">
             <android.support.design.widget.BottomNavigationView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/bottomNavView_Bar"
                 android:background="@drawable/white_grey_border_top"
-                app:menu="@menu/bottom_navigation_menu">
+                app:menu="@menu/bottom_navigation_menu"
+                app:itemTextColor="@color/colorTextGold"
+                app:itemIconTint="@color/colorTextGold">
 
 
             </android.support.design.widget.BottomNavigationView>

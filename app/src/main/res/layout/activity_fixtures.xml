@@ -49,7 +49,9 @@
                 android:layout_height="match_parent"
                 android:id="@+id/bottomNavView_Bar"
                 android:background="@drawable/white_grey_border_top"
-                app:menu="@menu/bottom_navigation_menu">
+                app:menu="@menu/bottom_navigation_menu"
+                app:itemTextColor="@color/colorTextGold"
+                app:itemIconTint="@color/colorTextGold">
 
 
             </android.support.design.widget.BottomNavigationView>

@@ -19,6 +19,7 @@
         android:id="@+id/ic_tables"
         android:icon="@drawable/ic_view_list_black_24dp"
         android:title="Tables"
+
         />
     <item
         android:id="@+id/ic_extras"

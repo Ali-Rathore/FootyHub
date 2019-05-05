@@ -2,7 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.alirathore22.footyhub.ProfileActivity">
+    tools:context="com.example.alirathore22.footyhub.ProfileActivity"
+    >
     <item
         android:id="@+id/action_search"
         android:orderInCategory="100"
@@ -16,6 +17,7 @@
         android:id="@+id/action_logout"
         android:orderInCategory="100"
         android:title="Logout"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        />
 
 </menu>

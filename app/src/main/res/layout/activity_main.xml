@@ -58,7 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Email here"
-                android:drawableLeft="@drawable/ic_action_user"/>
+                android:drawableLeft="@drawable/ic_action_user"
+                android:textColorHint="@color/colorTextGold"
+                android:fontFamily="@font/roboto_slab"/>
 
 
             <TextView
@@ -75,6 +77,8 @@
                 android:drawableLeft="@drawable/ic_action_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="@color/colorTextGold"
+                android:fontFamily="@font/roboto_slab"
                 android:hint="Enter Password here (atleast 6 characters)"
                 />
 

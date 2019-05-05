@@ -14,20 +14,27 @@
         <activity
             android:name=".NewsDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".teamAndLeagueSelection" />
-        <activity android:name=".FixturesActivity" />
-        <activity android:name=".LiveStreamActivity" />
-        <activity android:name=".TablesActivity" />
-        <activity android:name=".ExtraActivity" />
+        <activity android:name=".teamAndLeagueSelection"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".FixturesActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".LiveStreamActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".TablesActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ExtraActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="preloaded_fonts"

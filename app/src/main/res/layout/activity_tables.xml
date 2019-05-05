@@ -39,11 +39,13 @@
                 android:weightSum="11">
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/Name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name"
                     android:layout_weight="3"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -52,6 +54,8 @@
                     android:layout_height="wrap_content"
                     android:text="MP"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -60,6 +64,8 @@
                     android:layout_height="wrap_content"
                     android:text="GF"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -68,6 +74,8 @@
                     android:layout_height="wrap_content"
                     android:text="GA"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -76,6 +84,8 @@
                     android:layout_height="wrap_content"
                     android:text="GD"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -84,6 +94,8 @@
                     android:layout_height="wrap_content"
                     android:text="W"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -92,6 +104,8 @@
                     android:layout_height="wrap_content"
                     android:text="D"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -100,6 +114,8 @@
                     android:layout_height="wrap_content"
                     android:text="L"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
                 <TextView
@@ -108,6 +124,8 @@
                     android:layout_height="wrap_content"
                     android:text="Pts"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:textColor="@color/colorTextGold"
                     />
 
             </LinearLayout>
@@ -130,7 +148,9 @@
                 android:layout_height="match_parent"
                 android:id="@+id/bottomNavView_Bar"
                 android:background="@drawable/white_grey_border_top"
-                app:menu="@menu/bottom_navigation_menu">
+                app:menu="@menu/bottom_navigation_menu"
+                app:itemTextColor="@color/colorTextGold"
+                app:itemIconTint="@color/colorTextGold">
 
 
             </android.support.design.widget.BottomNavigationView>

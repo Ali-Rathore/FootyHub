@@ -27,13 +27,14 @@
         <TextView
             android:id="@+id/home_team"
             android:textSize="15sp"
-            android:textColor="#34343e"
             android:gravity="end"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/team_a"
-            tools:ignore="RelativeOverlap" />
+            tools:ignore="RelativeOverlap"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:textColor="@color/colorTextGold"/>
 
        <TextView
            android:padding="20dp"
@@ -42,7 +43,8 @@
            android:layout_height="wrap_content"
            android:text="VS"
            android:textSize="15sp"
-           android:textColor="#34343e"
+           android:fontFamily="@font/roboto_slab_bold"
+           android:textColor="@color/colorTextGold"
            android:gravity="end"
            android:layout_toRightOf="@id/home_team"
            />
@@ -51,7 +53,8 @@
         <TextView
             android:id="@+id/away_team"
             android:textSize="15sp"
-            android:textColor="#34343e"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:textColor="@color/colorTextGold"
             android:layout_centerVertical="true"
             android:gravity="start"
             android:layout_width="wrap_content"
@@ -64,13 +67,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/home_team"
-            android:layout_marginTop="17dp">
+            android:layout_marginTop="17dp"
+            >
 
             <TextView
                 android:id="@+id/streaming_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="link here" />
+                android:text="link here"
+                android:fontFamily="@font/roboto_slab"
+                android:textColor="@color/colorTextGold"/>
         </LinearLayout>
 
     </RelativeLayout>

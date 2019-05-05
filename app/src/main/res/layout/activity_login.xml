@@ -58,6 +58,8 @@
                 android:hint="Enter Email here"
                 android:inputType="textEmailAddress"
                 android:textSize="16dp"
+                android:textColorHint="@color/colorTextGold"
+                android:fontFamily="@font/roboto_slab"
                 android:drawableLeft="@drawable/ic_action_user"/>
 
 
@@ -75,6 +77,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Password here (atleast 6 characters)"
                 android:inputType="textPassword"
+                android:textColorHint="@color/colorTextGold"
+                android:fontFamily="@font/roboto_slab"
                 android:textSize="16sp"
                 android:drawableLeft="@drawable/ic_action_password"/>
 
