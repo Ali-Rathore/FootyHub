@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".teamAndLeagueSelection">
+    tools:context=".teamAndLeagueSelection"
+    android:background="@drawable/gradient">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +25,9 @@
                 android:layout_height="wrap_content"
                 android:text="Done"
                 android:layout_alignParentRight="true"
+                android:background="@drawable/btn_rounded"
+                android:textColor="@color/colorTextGold"
+                android:fontFamily="@font/roboto_slab"
 
                 />
             <Button
@@ -32,6 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:text="Log out"
+                android:background="@drawable/btn_rounded"
+                android:textColor="@color/colorTextGold"
+                android:fontFamily="@font/roboto_slab"
                 />
             <TextView
                 android:gravity="center"
@@ -40,7 +47,9 @@
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/doneButton"
                 android:layout_toRightOf="@id/logoutButton"
-                android:text="Select Teams or Leagues"/>
+                android:text="Select Teams"
+                android:fontFamily="@font/roboto_slab_bold"
+                android:textColor="@color/colorTextGold"/>
         </RelativeLayout>
 
         <GridLayout
@@ -88,9 +97,10 @@
                         android:layout_height="wrap_content"
                         android:text="Barcelona"
                         android:textAlignment="center"
-                        android:textColor="#000"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <!-- Row 1 -->
@@ -128,9 +138,10 @@
                         android:layout_height="wrap_content"
                         android:text="Real Madrid"
                         android:textAlignment="center"
-                        android:textColor="#000"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -169,9 +180,10 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Atletico Madrid"
                         android:textAlignment="center"
-                        android:textColor="#000"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                         />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <!-- Row 2 -->
@@ -209,9 +221,10 @@
                         android:layout_height="wrap_content"
                         android:text="Valencia"
                         android:textAlignment="center"
-                        android:textColor="#000"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                         />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -250,9 +263,10 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Getafe CF"
                         android:textAlignment="center"
-                        android:textColor="#000"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                         />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <!-- Row 2 -->
@@ -290,11 +304,1442 @@
                         android:layout_height="wrap_content"
                         android:text="Sevilla"
                         android:textAlignment="center"
-                        android:textColor="#000"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                         />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
+
+            <!-- Row 3 -->
+            <!-- column 1 -->
+            <!-- alaves -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/alaves" />
+
+                    <TextView
+                        android:id="@+id/TV7"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alaves"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 3 -->
+            <!-- column 2 -->
+            <!-- athletic bilbao -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/athletic_bilbao" />
+
+                    <TextView
+                        android:id="@+id/TV8"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Athletic Bilbao"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 3 -->
+            <!-- column 3 -->
+            <!-- celta vigo -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/celta_vigo" />
+
+                    <TextView
+                        android:id="@+id/TV9"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Celta Vigo"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 4 -->
+            <!-- column 1 -->
+            <!-- eibar -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/eibar" />
+
+                    <TextView
+                        android:id="@+id/TV10"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eibar"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 4 -->
+            <!-- column 2 -->
+            <!-- Espanyol -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/espanyol" />
+
+                    <TextView
+                        android:id="@+id/TV11"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Espanyol"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 4 -->
+            <!-- column 3 -->
+            <!-- Girona -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/girona" />
+
+                    <TextView
+                        android:id="@+id/TV12"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Girona"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 5 -->
+            <!-- column 1 -->
+            <!-- Huesca -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/huesca" />
+
+                    <TextView
+                        android:id="@+id/TV13"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Huesca"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Row 5 -->
+            <!-- column 2 -->
+            <!-- leganes -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/leganes" />
+
+                    <TextView
+                        android:id="@+id/TV14"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leganes"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Row 5 -->
+            <!-- column 3 -->
+            <!-- levante -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/levante" />
+
+                    <TextView
+                        android:id="@+id/TV15"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Levante"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Row 6 -->
+            <!-- column 1 -->
+            <!-- rayo vallecano -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/rayo_vallecano" />
+
+                    <TextView
+                        android:id="@+id/TV16"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rayo Vallecano"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 6 -->
+            <!-- column 2 -->
+            <!-- real betis -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/real_betis" />
+
+                    <TextView
+                        android:id="@+id/TV17"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Real Betis"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 6 -->
+            <!-- column 3 -->
+            <!-- real sociedad -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/real_sociedad" />
+
+                    <TextView
+                        android:id="@+id/TV18"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Real Soceidad"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 7 -->
+            <!-- column 1 -->
+            <!-- Valladolid -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV19"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/valladolid" />
+
+                    <TextView
+                        android:id="@+id/TV19"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Valladolid"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 7 -->
+            <!-- column 2 -->
+            <!-- Villareal -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/villarreal" />
+
+                    <TextView
+                        android:id="@+id/TV20"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Villareal"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 7 -->
+            <!-- column 3 -->
+            <!-- Arsenal -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV21"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/arsenal" />
+
+                    <TextView
+                        android:id="@+id/TV21"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arsenal"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 8 -->
+            <!-- column 1 -->
+            <!-- Brighton -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV22"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/birghton" />
+
+                    <TextView
+                        android:id="@+id/TV22"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Brighton"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 8 -->
+            <!-- column 2 -->
+            <!-- Bournemouth -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV23"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/bournemouth" />
+
+                    <TextView
+                        android:id="@+id/TV23"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bournemouth"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 8 -->
+            <!-- column 3 -->
+            <!-- Burnley -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV24"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/burnley" />
+
+                    <TextView
+                        android:id="@+id/TV24"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burnley"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 9 -->
+            <!-- column 1 -->
+            <!-- Cardiff city -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/cardiff_city" />
+
+                    <TextView
+                        android:id="@+id/TV25"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cardiff City"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 9 -->
+            <!-- column 2 -->
+            <!-- Chelsea -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV26"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/chelsea" />
+
+                    <TextView
+                        android:id="@+id/TV26"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chelsea"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 9 -->
+            <!-- column 3 -->
+            <!-- Crystal Palace-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV27"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/crystal_palace" />
+
+                    <TextView
+                        android:id="@+id/TV27"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crystal Palace"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 10 -->
+            <!-- column 1 -->
+            <!-- Everton-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV28"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/everton" />
+
+                    <TextView
+                        android:id="@+id/TV28"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Everton"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 10 -->
+            <!-- column 2 -->
+            <!-- Fulham-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV29"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/fulham" />
+
+                    <TextView
+                        android:id="@+id/TV29"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fulham"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 10 -->
+            <!-- column 3 -->
+            <!-- Huddersfield-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/huddersfield" />
+
+                    <TextView
+                        android:id="@+id/TV30"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Huddersfield"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- Row 11 -->
+            <!-- column 1 -->
+            <!-- Leicester city-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV31"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/leicester_city" />
+
+                    <TextView
+                        android:id="@+id/TV31"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leicester City"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 11 -->
+            <!-- column 2 -->
+            <!-- Liverpool-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV32"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/liverpool" />
+
+                    <TextView
+                        android:id="@+id/TV32"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Liverpool"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 11 -->
+            <!-- column 3 -->
+            <!-- Manchester City-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV33"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/manchester_city" />
+
+                    <TextView
+                        android:id="@+id/TV33"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manchester City"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 12 -->
+            <!-- column 1 -->
+            <!-- Manchester United-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/manchester_utd" />
+
+                    <TextView
+                        android:id="@+id/TV34"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manchester Utd"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 12 -->
+            <!-- column 2 -->
+            <!-- Newcastle United-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV35"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/newcastle_utd" />
+
+                    <TextView
+                        android:id="@+id/TV35"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Newcastle Utd"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 12 -->
+            <!-- column 3 -->
+            <!-- Southampton-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV36"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/southampton" />
+
+                    <TextView
+                        android:id="@+id/TV36"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Southampton"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 13 -->
+            <!-- column 1 -->
+            <!-- Tottenham-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV37"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/tottenham" />
+
+                    <TextView
+                        android:id="@+id/TV37"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tottenham"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 13 -->
+            <!-- column 2 -->
+            <!-- Watford-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV38"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/watford" />
+
+                    <TextView
+                        android:id="@+id/TV38"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Watford"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 13 -->
+            <!-- column 3 -->
+            <!-- West Ham-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV39"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/west_ham_utd" />
+
+                    <TextView
+                        android:id="@+id/TV39"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="West Ham"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Row 14 -->
+            <!-- column 1 -->
+            <!-- Wolves-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/CV40"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/wolverhampton" />
+
+                    <TextView
+                        android:id="@+id/TV40"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wolves"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/roboto_slab_light"
+                        android:textColor="@color/colorTextDarkGold"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
 
         </GridLayout>
     </LinearLayout>
