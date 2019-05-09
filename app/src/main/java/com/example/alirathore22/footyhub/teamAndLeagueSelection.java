@@ -72,7 +72,7 @@ public class teamAndLeagueSelection extends AppCompatActivity implements View.On
                 @Override
                 public void onClick(View v) {
                     if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
-                        cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
+                        cardView.setCardBackgroundColor(Color.parseColor("#daa520"));
                         selected.add(finalI);
                     } else {
                         cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));

@@ -26,41 +26,39 @@
 
         <TextView
             android:id="@+id/home_team"
-            android:textSize="15sp"
-            android:gravity="end"
-            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/team_a"
-            tools:ignore="RelativeOverlap"
             android:fontFamily="@font/roboto_slab_bold"
-            android:textColor="@color/colorTextGold"/>
-
-       <TextView
-           android:padding="20dp"
-           android:id="@+id/vsTag"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="VS"
-           android:textSize="15sp"
-           android:fontFamily="@font/roboto_slab_bold"
-           android:textColor="@color/colorTextGold"
-           android:gravity="end"
-           android:layout_toRightOf="@id/home_team"
-           />
-
+            android:gravity="end"
+            android:text="@string/team_a"
+            android:textColor="@color/colorTextGold"
+            android:textSize="15sp"
+            tools:ignore="RelativeOverlap"
+            android:padding="2dp"/>
 
         <TextView
-            android:id="@+id/away_team"
-            android:textSize="15sp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:textColor="@color/colorTextGold"
-            android:layout_centerVertical="true"
-            android:gravity="start"
+            android:id="@+id/vsTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/home_team"
+            android:text="Vs"
+            android:textSize="15sp"
+            android:textColor="@color/colorTextGold"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:padding="2dp"
+            />
+        <TextView
+            android:padding="2dp"
+            android:id="@+id/away_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
             android:layout_toRightOf="@id/vsTag"
-            android:text="@string/team_b"/>
+            android:fontFamily="@font/roboto_slab_bold"
+            android:gravity="start"
+            android:text="@string/team_b"
+            android:textColor="@color/colorTextGold"
+            android:textSize="15sp" />
 
         <LinearLayout
             android:id="@+id/link_layout"

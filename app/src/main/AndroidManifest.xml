@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".teamAndLeagueSelection"
             android:theme="@style/AppTheme.NoActionBar"/>
